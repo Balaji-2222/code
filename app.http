@@ -1,0 +1,59 @@
+####
+GET http://localhost:3000/todo/?status=TO%20DO
+
+####
+GET http://localhost:3000/todo/?priority=HIGH
+
+####
+GET http://localhost:3000/todo/?status=IN%20PROGRESS&priority=HIGH
+
+####
+GET http://localhost:3000/todo/?status=DONE&category=WORK
+
+####
+GET http://localhost:3000/todo/?priority=HIGH&category=LEARNING
+
+####
+GET http://localhost:3000/todo/?category=HOME
+
+####
+GET http://localhost:3000/todo/3/
+
+####
+PUT http://localhost:3000/todos/4
+
+Content-Type:application/json
+
+{
+    "status" : "DONE"
+}
+####
+PUT http://localhost:3000/todos/4
+
+Content-Type:application/json
+{
+    "priority" : "HIGH"
+}
+####
+PUT http://localhost:3000/todos/4
+
+Content-Type:application/json
+{
+    "todo":"Clean the garden"
+}
+####
+PUT http://localhost:3000/todos/4
+
+Content-Type:application/json
+{
+    "category" :"LEARNING"
+}
+####
+PUT http://localhost:3000/todos/4
+Content-Type:application/json
+{
+    "dueDate" : "2021-09-08"
+}
+
+####
+DELETE http://localhost:3000/todos/2
