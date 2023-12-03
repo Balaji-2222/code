@@ -21,7 +21,6 @@ GET http://localhost:3000/todo/3/
 
 ####
 PUT http://localhost:3000/todos/4
-
 Content-Type:application/json
 
 {
@@ -29,28 +28,31 @@ Content-Type:application/json
 }
 ####
 PUT http://localhost:3000/todos/4
-
 Content-Type:application/json
+
 {
     "priority" : "HIGH"
 }
+
 ####
 PUT http://localhost:3000/todos/4
-
 Content-Type:application/json
+
 {
     "todo":"Clean the garden"
 }
+
 ####
 PUT http://localhost:3000/todos/4
-
 Content-Type:application/json
+
 {
     "category" :"LEARNING"
 }
 ####
 PUT http://localhost:3000/todos/4
 Content-Type:application/json
+
 {
     "dueDate" : "2021-09-08"
 }

@@ -174,7 +174,7 @@ app.put("/todos/:todoId", async (request, response) => {
     case toUpdateStatus(request.body):
       const ans5 = `UPDATE todo SET status = '${status}'
             WHERE id = ${todoId}`;
-      await db.run(ans5);
+      const s = await db.run(ans5);
       if (
         ans5.status === "TO DO" ||
         ans5.status === "IN PROGRESS" ||
@@ -183,8 +183,7 @@ app.put("/todos/:todoId", async (request, response) => {
         response.send("Status Updated");
       } else {
         response.status(400);
-        response.send("Invalid Todo Status");
-      }
+        response.send("Invalid todo status");
       break;
     case toUpdatePriority(request.body):
       const ans6 = `UPDATE todo SET priority = '${priority}'
