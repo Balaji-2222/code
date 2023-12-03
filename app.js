@@ -175,25 +175,18 @@ app.put("/todos/:todoId", async (request, response) => {
       const ans5 = `UPDATE todo SET status = '${status}'
             WHERE id = ${todoId}`;
       const s = await db.run(ans5);
-      if (
-        ans5.status === "TO DO" ||
-        ans5.status === "IN PROGRESS" ||
-        ans5.status === "DONE"
-      ) {
+      if (status === "TO DO" || status === "IN PROGRESS" || status === "DONE") {
         response.send("Status Updated");
       } else {
         response.status(400);
         response.send("Invalid todo status");
+      }
       break;
     case toUpdatePriority(request.body):
       const ans6 = `UPDATE todo SET priority = '${priority}'
             WHERE id = ${todoId}`;
       await db.run(ans6);
-      if (
-        ans6.priority === "HIGH" ||
-        ans6.priority === "MEDIUM" ||
-        ans6.priority === "LOW"
-      ) {
+      if (priority === "HIGH" || priority === "MEDIUM" || priority === "LOW") {
         response.send("Priority Updated");
       } else {
         response.status(400);
@@ -211,9 +204,9 @@ app.put("/todos/:todoId", async (request, response) => {
             WHERE id = ${todoId}`;
       await db.run(ans8);
       if (
-        ans8.category === "WORK" ||
-        ans8.category === "HOME" ||
-        ans8.category === "LEARNING"
+        category === "WORK" ||
+        category === "HOME" ||
+        category === "LEARNING"
       ) {
         response.send("Category Updated");
       } else {

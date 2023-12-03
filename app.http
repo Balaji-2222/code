@@ -47,7 +47,7 @@ PUT http://localhost:3000/todos/4
 Content-Type:application/json
 
 {
-    "category" :"LEARNING"
+    "category" :"LEARNI"
 }
 ####
 PUT http://localhost:3000/todos/4
